@@ -1,26 +1,29 @@
 import java.util.Scanner;
 
-public class Prob3 {
-  public static void main(String[] args) {
-    
-    
-    // Prompt the user to enter weight in pounds
-    
-    
-    // Prompt the user to enter height in inches
+public class Lab_03_3 {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		final double KILOGRAMS_PER_POUND = 0.45359237;
+		final double METERS_PER_INCH = 0.0254;
 
+		// Prompt the user to enter a weight in pounds
+		System.out.print("Enter weight in pounds: ");
+		double weight = input.nextDouble();
 
-    
-    //Constant
-    final double KILOGRAMS_PER_POUND = 0.45359237; 
-    final double METERS_PER_INCH = 0.0254; 
-    
-    // Compute BMI
-    double weightInKilograms = weight * KILOGRAMS_PER_POUND;
-    double heightInMeters = height * METERS_PER_INCH;
-    double BMI = weightInKilograms/(heightInMeters * heightInMeters);
+		// Prompt the user to enter height in inches
+		System.out.print("Enter height in inches: ");
+		double height = input.nextDouble();
 
-    // Display result using if, else if and else
-   
-  }
+		// Convert weight to kilograms
+		weight = weight * KILOGRAMS_PER_POUND;
+
+		// Convert height to meters
+		height = height * METERS_PER_INCH;
+
+		// Compute BMI
+		double bodyMassIndex = weight / Math.pow(height, 2);
+
+		// Display result
+		System.out.println("BMI is " + bodyMassIndex);
+	}
 }
